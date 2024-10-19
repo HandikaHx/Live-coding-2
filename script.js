@@ -1,4 +1,4 @@
-// Fungsi untuk membangkitkan bilangan acak
+
 function generateBilangan(jumlah) {
     const bilangan = [];
     for (let i = 0; i < jumlah; i++) {
@@ -7,7 +7,7 @@ function generateBilangan(jumlah) {
     return bilangan;
 }
 
-// Fungsi untuk melakukan QUICK sort
+
 function quickSort(bilangan) {
     if (bilangan.length <= 1) {
         return bilangan;
@@ -25,7 +25,7 @@ function quickSort(bilangan) {
     return quickSort(left).concat(pivot, quickSort(right));
 }
 
-// Fungsi untuk melakukan MERGE sort
+
 function mergeSort(bilangan) {
     if (bilangan.length <= 1) {
         return bilangan;
@@ -48,7 +48,7 @@ function merge(left, right) {
     return result.concat(left, right);
 }
 
-// Fungsi untuk mengukur durasi waktu
+
 function measureTime(func, bilangan) {
     const startTime = performance.now();
     func(bilangan);
@@ -56,7 +56,7 @@ function measureTime(func, bilangan) {
     return endTime - startTime;
 }
 
-// Fungsi untuk melakukan sorting dan menampilkan hasil
+
 function performSort(type) {
     const jumlahBilangan = parseInt(document.getElementById('jumlah-bilangan').value);
     if (isNaN(jumlahBilangan) || jumlahBilangan <= 0) {
@@ -130,22 +130,22 @@ function performSort(type) {
     `;
 }
 
-// Fungsi untuk mengosongkan hasil
+
 function clearResults() {
     document.getElementById('hasil-sorting').innerHTML = '';
     document.getElementById('durasi-waktu').innerHTML = '';
     document.getElementById('jumlah-bilangan').value = ''; // Bersihkan input bilangan juga
 }
 
-// Event listener untuk tombol sort quick
+
 document.getElementById('sort-quick').addEventListener('click', () => {
     performSort('quick');
 });
 
-// Event listener untuk tombol sort merge
+
 document.getElementById('sort-merge').addEventListener('click', () => {
     performSort('merge');
 });
 
-// Event listener untuk tombol clear
+
 document.getElementById('clear-results').addEventListener('click', clearResults);
